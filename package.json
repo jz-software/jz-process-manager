@@ -1,5 +1,5 @@
 {
-  "name": "node-process-manager",
+  "name": "jz-process-manager",
   "version": "0.0.1",
   "description": "A process manager for Node.js applications",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jz-software/node-process-manager.git"
+    "url": "git+https://github.com/jz-software/jz-process-manager.git"
   },
   "author": "JZ-Software",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jz-software/node-process-manager/issues"
+    "url": "https://github.com/jz-software/jz-process-manager/issues"
   },
-  "homepage": "https://github.com/jz-software/node-process-manager#readme",
+  "homepage": "https://github.com/jz-software/jz-process-manager#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "os-utils": "0.0.14"
