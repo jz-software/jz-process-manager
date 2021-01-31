@@ -1,0 +1,24 @@
+{
+  "name": "process-manager",
+  "version": "0.0.1",
+  "description": "A process manager for Node.js applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jz-software/process-manager.git"
+  },
+  "author": "JZ-Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jz-software/process-manager/issues"
+  },
+  "homepage": "https://github.com/jz-software/process-manager#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "node-cron": "^2.0.3",
+    "os-utils": "0.0.14"
+  }
+}
