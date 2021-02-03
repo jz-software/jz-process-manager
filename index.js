@@ -19,7 +19,8 @@ class ProcessManager{
                 if (message.type === 'utf8') {
                     const response = JSON.parse(message.utf8Data);
                     if(response.status != 200){
-                        console.log("Received: '" + message.utf8Data + "'");
+                        // do nothing for now
+                        // console.log("Received: '" + message.utf8Data + "'");
                     }
                 }
             });
