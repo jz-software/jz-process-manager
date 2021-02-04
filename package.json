@@ -1,8 +1,9 @@
 {
   "name": "jz-process-manager",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A process manager for Node.js applications",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server",
@@ -19,13 +20,15 @@
   },
   "homepage": "https://github.com/jz-software/jz-process-manager#readme",
   "dependencies": {
+    "@types/node": "^14.14.25",
+    "@types/websocket": "^1.0.1",
     "axios": "^0.21.1",
-    "os-utils": "0.0.14",
-    "websocket": "^1.0.33",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "os-utils": "0.0.14",
     "pg": "^8.5.1",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "websocket": "^1.0.33"
   },
   "devDependencies": {
     "standard-version": "^9.1.0"
