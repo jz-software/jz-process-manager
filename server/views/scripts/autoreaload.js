@@ -22,7 +22,9 @@ function secondsToDhms(seconds) {
     const dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
     const hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
     const mDisplay = m > 0 ? m + (m == 1 ? " minute" : " minutes") : "";
-    return dDisplay + hDisplay + mDisplay;
+
+    const timeValue = dDisplay + hDisplay + mDisplay;
+    return timeValue === "" ? `${seconds}s` : timeValue;
 }
 
 socket.addEventListener('message', function (event) {

@@ -3,16 +3,20 @@ const { getCpuUsage, memoryUsage } = require('./helpers/os');
 
 class ProcessManager{
     constructor(server_url, application_id, auth_key, refreshRate){
+        let connection_status = false;
         this.client = new WebSocketClient();
         this.client.on('connectFailed', function(error) {
             console.log('Connect Error: ' + error.toString());
         });
         this.client.on('connect', function(connection) {
+            connection_status = true;
             console.log('WebSocket Client Connected');
             connection.on('error', function(error) {
+                connection_status = false;
                 console.log("Connection Error: " + error.toString());
             });
             connection.on('close', function() {
+                connection_status = false;
                 console.log('echo-protocol Connection Closed');
             });
             connection.on('message', function(message) {
@@ -43,6 +47,13 @@ class ProcessManager{
             sendInfo();
         });
         this.client.connect(server_url, 'echo-protocol');
+
+        // check if connection is true
+        setInterval(() => {
+            if(!connection_status){
+                this.client.connect(server_url, 'echo-protocol');
+            }
+        }, 10000)
     }
 }
 
