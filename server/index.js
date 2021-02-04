@@ -72,7 +72,6 @@ wsServer.on('request', function(request) {
         
             const auth = await db.query('SELECT EXISTS(select 1 from auth_keys WHERE auth_id = $1)', [auth_key]);
             if(!auth.rows[0].exists) throw Error('Authentication key not found');
-            await db.query(`UPDATE applications SET ${query} WHERE application_id = $1`, [application_id]);
 
             connection.sendUTF(JSON.stringify({ status: 200, "message": "updated" }));
 

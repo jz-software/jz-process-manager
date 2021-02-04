@@ -15,10 +15,10 @@ html
         p(class=application.status ? 'active' : 'deactivated', id='status')= application.status ? 'active' : 'deactivated'
       div
         i(class="fas fa-microchip")
-        p(id='cpu-usage')= `${application.cpu_usage}%`
+        p(id='cpu-usage')= '0%'
       div
         i(class="fas fa-memory")
-        p(id='memory-usage')= `${application.ram_usage}MiB`
+        p(id='memory-usage')= '0MiB'
     canvas(id="usage-chart" width="400" height="100")
     div(class="chart-icons")
       div
