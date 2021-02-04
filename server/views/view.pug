@@ -1,0 +1,34 @@
+html
+  head
+    title= application.name
+    style
+      include styles/style.css
+    script(src="https://kit.fontawesome.com/3849555537.js" crossorigin="anonymous")
+    script(src="https://cdn.rawgit.com/joewalnes/smoothie/master/smoothie.js", content-type="application/javascript;charset=utf-8")
+  body
+    div(class="title-icon")
+      i(class="fas fa-server")
+      h1(id='application-title', application-id=application.application_id)= application.name
+    div(class="usage-info")
+      div
+        i(class="fas fa-signal")
+        p(class=application.status ? 'active' : 'deactivated', id='status')= application.status ? 'active' : 'deactivated'
+      div
+        i(class="fas fa-microchip")
+        p(id='cpu-usage')= `${application.cpu_usage}%`
+      div
+        i(class="fas fa-memory")
+        p(id='memory-usage')= `${application.ram_usage}MiB`
+    canvas(id="usage-chart" width="400" height="100")
+    div(class="chart-icons")
+      div
+        i(class="usage-color fas fa-grip-lines" style="color: rgb(247, 161, 3);")
+        p= "cpu"
+      div
+        i(class="usage-color fas fa-grip-lines" style="color: rgb(2, 194, 2);")
+        p= "memory"
+  script= "const websocket_port="+websocket_port
+  script
+    include scripts/autoreaload.js
+  script
+    include scripts/smoothieChart.js

@@ -4,7 +4,8 @@
   "description": "A process manager for Node.js applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   "dependencies": {
     "axios": "^0.21.1",
     "os-utils": "0.0.14",
-    "websocket": "^1.0.33"
+    "websocket": "^1.0.33",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "pug": "^3.0.0"
   }
 }
