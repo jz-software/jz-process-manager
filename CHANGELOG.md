@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/jz-software/jz-process-manager/compare/v0.0.5...v0.0.6) (2021-02-04)
+
+
+### Features
+
+* move module to typescript ([84b530b](https://github.com/jz-software/jz-process-manager/commit/84b530bb880083e2d65eade5448080fee44cb5e9))
+* move server to typescript ([ff9641f](https://github.com/jz-software/jz-process-manager/commit/ff9641f6a62adff0574518d47c251e16083d6669))
+
+
+### Bug Fixes
+
+* package version ([b1076bc](https://github.com/jz-software/jz-process-manager/commit/b1076bcc70c131dc6bb9b33ebe64884f5667adde))
+* remove server from package ([953697d](https://github.com/jz-software/jz-process-manager/commit/953697d0af1d7e0e0e6b0948495d6b4453846fd8))
+
 ### 0.0.5 (2021-02-04)
 
 
