@@ -1,11 +1,12 @@
 {
   "name": "jz-process-manager",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A process manager for Node.js applications",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server"
+    "server": "node server",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "standard-version": "^9.1.0"
   }
 }
