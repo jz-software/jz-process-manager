@@ -1,0 +1,19 @@
+html
+  head
+    title= title
+    style
+      include styles/style.css
+    script(src="https://kit.fontawesome.com/3849555537.js" crossorigin="anonymous")
+  body
+    each val in applications
+      div(class="app" id=val.application_id)
+        a(href=`/application/view/${val.application_id}`)= val.name
+        div(class="icons")
+          i(class="fas fa-memory")
+          p(class="memory-usage")= '0MiB'
+        div(class="icons")
+          i(class="fas fa-microchip")
+          p(class="cpu-usage")= '0%'
+  script= "const websocket_port="+websocket_port
+  script
+    include scripts/loadDashboard.js

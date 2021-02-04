@@ -1,0 +1,92 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #171E27;
+    color: white;
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.title-icon{
+    display: flex;
+    align-items: center;
+}
+
+.title-icon i{
+    margin-right: 10px;
+    color: #0998eb;
+}
+
+.usage-info{
+    display: flex;
+    align-items: center;
+}
+
+.usage-info div{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.usage-info i{
+    margin-right: 10px;
+    color: #0998EB;
+}
+
+.app{
+    background-color: #202A37;
+    padding: 20px 20px;
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.app a{
+    transition: 0.2s;
+}
+
+.app .icons{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.app .icons i{
+    margin: 0px 10px;
+}
+
+.app .icons p{
+    color: #01cea2;
+}
+
+.app a:hover{
+    color: rgb(212, 212, 212);
+}
+
+
+/* .active{
+    color: green;
+}
+
+.deactivated{
+    color: red;
+} */
+
+.chart-icons{
+    display: flex;
+    align-items: center;
+}
+
+.chart-icons div{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.chart-icons div i{
+    margin-right: 5px;
+}
