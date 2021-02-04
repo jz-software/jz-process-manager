@@ -34,6 +34,7 @@ class ProcessManager{
                         status: true,
                         cpu_usage: cpuUsage.toFixed(2),
                         ram_usage: memoryUsage().toFixed(2),
+                        uptime: process.uptime().toFixed(0)
                     }
                     connection.sendUTF(JSON.stringify(info));
                     setTimeout(sendInfo, refreshRate);
