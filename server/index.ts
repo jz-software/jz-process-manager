@@ -9,14 +9,14 @@ const fs = require('fs');
 const schema = fs.readFileSync(__dirname+'/db/schema.sql', 'utf-8');
 db.query(schema);
 
-const websocket_port = 80;
+const websocket_port = 8080;
 
-app.get('/dashboard', async (req, res) => {
+app.get('/dashboard', async (req: any, res: any) => {
   const applications = await db.query('SELECT * FROM applications');
   res.render('dashboard', { applications: applications.rows, websocket_port });
 })
 
-app.get('/application/view/:application_id', async (req, res) => {
+app.get('/application/view/:application_id', async (req: any, res: any) => {
   const applications = await db.query('SELECT * FROM applications WHERE application_id = $1', [req.params.application_id]);
   res.render('view', { application: applications.rows[0], websocket_port });
 })
@@ -28,7 +28,7 @@ app.listen(port, () => {
 const WebSocketServer = require('websocket').server;
 const http = require('http');
 
-const server = http.createServer(function(request, response) {
+const server = http.createServer(function(request: any, response: any) {
     console.log((new Date()) + ' Received request for ' + request.url);
     response.writeHead(404);
     response.end();
@@ -42,11 +42,11 @@ const wsServer = new WebSocketServer({
     autoAcceptConnections: false
 });
 
-function originIsAllowed(origin) {
+function originIsAllowed(origin: any) {
   return true;
 }
 
-wsServer.on('request', function(request) {
+wsServer.on('request', function(request: any) {
     if (!originIsAllowed(request.origin)) {
       request.reject();
       console.log((new Date()) + ' Connection from origin ' + request.origin + ' rejected.');
@@ -55,7 +55,7 @@ wsServer.on('request', function(request) {
     
     const connection = request.accept('echo-protocol', request.origin);
     console.log((new Date()) + ' Connection accepted.');
-    connection.on('message', async function(message) {
+    connection.on('message', async function(message: any) {
         if (message.type === 'utf8') {
             message = JSON.parse(message.utf8Data);
 
@@ -75,7 +75,7 @@ wsServer.on('request', function(request) {
 
             connection.sendUTF(JSON.stringify({ status: 200, "message": "updated" }));
 
-            wsServer.connections.forEach((client) => {
+            wsServer.connections.forEach((client: any) => {
               client.sendUTF(JSON.stringify({ application_id: application_id, properties: message }));
             })
         }
@@ -84,7 +84,7 @@ wsServer.on('request', function(request) {
             connection.sendBytes(message.binaryData);
         }
     });
-    connection.on('close', function(reasonCode, description) {
+    connection.on('close', function(reasonCode: any, description: any) {
         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     });
 });
