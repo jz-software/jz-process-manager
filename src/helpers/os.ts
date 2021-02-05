@@ -1,9 +1,9 @@
-const os = require('os-utils');
+import { cpuUsage } from 'os-utils'
 
-export function getCpuUsage(){
+export function getCpuUsage(): Promise<number>{
     return new Promise((resolve, reject) => {
         try{
-            os.cpuUsage((cpu: number) => resolve(cpu));
+            cpuUsage((cpu: number) => resolve(cpu));
         } catch (error) {
             reject(error);
         }
